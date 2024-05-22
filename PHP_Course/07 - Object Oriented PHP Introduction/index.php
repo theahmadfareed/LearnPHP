@@ -3,6 +3,8 @@ echo "Object Oriented Programming in PHP" . "<br>";
 
 class Car
 {
+
+  // var $id;
   public $name;
   public $color;
   public $company;
