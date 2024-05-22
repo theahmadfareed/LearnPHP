@@ -6,7 +6,6 @@ Logical = [&&, ||, !]
 Operator Precedence = [() -> ** -> *,/,% -> +,-] 
 -->
 
-
 <?php
 echo "<br>", 5 + 2, "<br>";
 echo 5 - 2, "<br>";
