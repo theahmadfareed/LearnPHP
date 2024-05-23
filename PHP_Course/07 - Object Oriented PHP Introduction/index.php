@@ -3,7 +3,6 @@ echo "Object Oriented Programming in PHP" . "<br>";
 
 class Car
 {
-
   // var $id;
   public $name;
   public $color;
@@ -11,9 +10,9 @@ class Car
 
   static $country;
 
-  function set_country($country)
+  public static function set_country($country)
   {
-    Car::$country = $country;
+    self::$country = $country;
   }
   public function __construct($name, $color, $company)
   {
@@ -21,17 +20,20 @@ class Car
     $this->color = $color;
     $this->company = $company;
   }
+  //  Abstraction
   public function display()
   {
     echo "<br>" . $this->name . "<br>";
     echo $this->company . "<br>";
     echo $this->color . "<br>";
-    echo Car::$country . "<br>";
+    echo self::$country . "<br>";
   }
 }
 
+//  Inheritance
 class ECar extends Car
 {
+  //  Encapsulation
   protected $battery;
   private $price;
 
@@ -51,6 +53,7 @@ class ECar extends Car
   {
     $this->battery = $battery;
   }
+  //  Polymorphism
   public function display()
   {
     echo "<br>" . $this->name . "<br>";
@@ -72,8 +75,8 @@ class ECar extends Car
 //   echo "<br>not exists<br>";
 // }
 
+Car::set_country("Pakistan");
 $car = new Car("GLI", "Black", "Toyota");
-$car->set_country("pakistan");
 $car->display();
 
 $ecar = new ECar("GLI", "Black", "Toyota", "5000 MAH");
